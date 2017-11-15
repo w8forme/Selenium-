@@ -2,10 +2,8 @@ package myprojects.automation.assignment2.tests;
 
 import myprojects.automation.assignment2.BaseScript;
 import myprojects.automation.assignment2.pages.LoginPage;
-import myprojects.automation.assignment2.utils.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginTest extends BaseScript {
 
