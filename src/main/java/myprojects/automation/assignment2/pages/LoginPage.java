@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by veles on 15.11.2017.
+ * Created by Pavel Holinko on 12.11.2017.
  */
 public class LoginPage {
 

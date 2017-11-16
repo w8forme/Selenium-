@@ -1,28 +1,46 @@
 package myprojects.automation.assignment2.tests;
 
 import myprojects.automation.assignment2.BaseScript;
-import myprojects.automation.assignment2.utils.Properties;
+import myprojects.automation.assignment2.pages.AdminPage;
+import myprojects.automation.assignment2.pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CheckMainMenuTest extends BaseScript{
+import java.util.List;
+
+public class CheckMainMenuTest extends BaseScript {
 
     public static void main(String[] args) throws InterruptedException {
-       // TODO Script to check Main Menu items
-        String login = "webinar.test@gmail.com";
-        String password = "Xcg7299bnSmMuRLp9ITw";
-        WebElement loginField;
-        WebElement passwrdField;
-        WebElement submitButton;
+        // TODO Script to check Main Menu items
         WebDriver driver = getDriver();
-        driver.get(Properties.getBaseAdminUrl());
-        loginField = driver.findElement(By.id("email"));
-        loginField.sendKeys(login);
-        passwrdField = driver.findElement(By.id("passwd"));
-        passwrdField.sendKeys(password);
-        submitButton = driver.findElement(By.name("submitLogin"));
-        submitButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        LoginPage loginPage = new LoginPage(driver);
+        AdminPage adminPage = new AdminPage(driver);
+        List<By> elements;
+
+        loginPage.openLoginPage();
+        loginPage.fillEmailInput();
+        loginPage.fillPassInput();
+        loginPage.clickLoginBtn();
+
+        elements = adminPage.getMenuElements();
+        for (By element: elements) {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            driver.findElement(element).click();
+            Thread.sleep(2000);
+        }
+
+//        String beforeRefresh;
+//        String afterRefresh;
+//        if (!(beforeRefresh.equals(afterRefresh))) {
+//            throw new IllegalArgumentException(beforeRefresh + " and " + afterRefresh + " doesn't match");
+//        }
+        //*[@id="nav-sidebar"]/ul
+
+
+        driver.quit();
 
         // ...
     }
