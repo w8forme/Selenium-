@@ -15,19 +15,19 @@ public class AdminPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private By dashboard = By.id("tab-AdminDashboard");
-    private By orders = By.id("subtab-AdminParentOrders");
-    private By catalog = By.id("subtab-AdminCatalog");
-    private By customer = By.id("subtab-AdminParentCustomer");
-    private By customerThreads = By.id("subtab-AdminParentCustomerThreads");
-    private By stats = By.id("subtab-AdminStats");
-    private By modules = By.id("subtab-AdminParentModulesSf");
-    private By themes = By.id("subtab-AdminParentThemes");
-    private By shipping = By.id("subtab-AdminParentShipping");
-    private By payment = By.id("subtab-AdminParentPayment");
-    private By international = By.id("subtab-AdminInternational");
-    private By shopParameters = By.id("subtab-ShopParameters");
-    private By advancedParameters = By.id("subtab-AdminAdvancedParameters");
+    private By dashboard = By.xpath("//span[contains(text(),'Dashboard')]");
+    private By orders = By.xpath("//span[contains(text(),'Заказы')]");
+    private By catalog = By.xpath("//span[contains(text(),'Каталог')]");
+    private By customer = By.xpath("//span[contains(text(),'Клиенты')]");
+    private By customerThreads = By.xpath("//span[contains(text(),'Служба поддержки')]");
+    private By stats = By.xpath("//span[contains(text(),'Статистика')]");
+    private By modules = By.xpath("//span[contains(text(),'Modules')]");
+    private By themes = By.xpath("//span[contains(text(),'Design')]");
+    private By shipping = By.xpath("//span[contains(text(),'Доставка')]");
+    private By payment = By.xpath("//span[contains(text(),'Способ оплаты')]");
+    private By international = By.xpath("//span[contains(text(),'International')]");
+    private By shopParameters = By.xpath("//span[contains(text(),'Shop Parameters')]");
+    private By advancedParameters = By.xpath("//span[contains(text(),'Конфигурация')]");
 
     public AdminPage(WebDriver driver) {
         this.driver = driver;
