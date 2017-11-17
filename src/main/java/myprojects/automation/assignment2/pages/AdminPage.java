@@ -31,10 +31,10 @@ public class AdminPage {
 
     public AdminPage(WebDriver driver) {
         this.driver = driver;
+        this.wait =  new WebDriverWait(driver, 10);
     }
 
     public List<By> getMenuElements() {
-        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(dashboard));
         List<By> elements = new ArrayList<>();
         elements.add(dashboard);
@@ -52,74 +52,4 @@ public class AdminPage {
         elements.add(advancedParameters);
         return elements;
     }
-
-    public void clickOnDashboard() {
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(dashboard));
-        driver.findElement(dashboard).click();
-    }
-
-    public void clickOnOrders() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(orders));
-        driver.findElement(orders).click();
-    }
-
-    public void clickOnCatalog() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(catalog));
-        driver.findElement(catalog).click();
-    }
-
-    public void clickOnCustomer() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(customer));
-        driver.findElement(customer).click();
-    }
-
-    public void clickOnCustomerThreads() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(customerThreads));
-        driver.findElement(customerThreads).click();
-    }
-
-    public void clickOnStats() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(stats));
-        driver.findElement(stats).click();
-    }
-
-    public void clickOnModules() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(modules));
-        driver.findElement(modules).click();
-    }
-
-    public void clickOnThemes() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(themes));
-        driver.findElement(themes).click();
-    }
-
-    public void clickOnShipping() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(shipping));
-        driver.findElement(shipping).click();
-    }
-
-    public void clickOnPayment() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(payment));
-        driver.findElement(payment).click();
-    }
-
-    public void clickOnInternational() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(international));
-        driver.findElement(international).click();
-    }
-
-    public void clickOnShopParameters() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(shopParameters));
-        driver.findElement(shopParameters).click();
-    }
-
-    public void clickOnAdvancedParameters() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(advancedParameters));
-        driver.findElement(advancedParameters).click();
-    }
-
-
-
-
 }

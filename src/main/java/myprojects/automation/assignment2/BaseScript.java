@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Base script functionality, can be used for all Selenium scripts.
  */
@@ -31,7 +33,7 @@ public abstract class BaseScript {
      *
      * @return New instance of {@link WebDriver} object.
      */
-    public static WebDriver getDriver() {
+    private static WebDriver getDriver() {
         // TODO return  WebDriver instance
         String browser = Properties.getBrowser();
         switch (browser.toLowerCase()) {
@@ -46,5 +48,12 @@ public abstract class BaseScript {
                 System.out.println("Unsupported browser type!");
                 throw new UnsupportedOperationException("Method doesn't return WebDriver instance");
         }
+    }
+
+    public static WebDriver getConfiguredDriver() {
+        WebDriver driver = getDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        return driver;
     }
 }

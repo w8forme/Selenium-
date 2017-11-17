@@ -11,7 +11,7 @@ public class LoginTest extends BaseScript {
 
     public static void main(String[] args) throws InterruptedException {
         // TODO Script to execute login and logout steps
-        WebDriver driver = getDriver();
+        WebDriver driver = getConfiguredDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         LoginPage loginPage = new LoginPage(driver);
         By exitBtn =By.id("header_logout");
