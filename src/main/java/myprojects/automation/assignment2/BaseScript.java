@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -45,7 +44,7 @@ public abstract class BaseScript {
             case "internet explorer":
                 return getInternetExplorerDriver();
             default:
-                System.out.println("Unsupported browser type!");
+                System.err.println("Unsupported browser type!");
                 throw new UnsupportedOperationException("Method doesn't return WebDriver instance");
         }
     }
